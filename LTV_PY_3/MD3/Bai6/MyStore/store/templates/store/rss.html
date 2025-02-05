@@ -1,0 +1,72 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block body_block %}
+<!-- Header Inner -->
+<div class="header-inner">
+	<div class="container">
+		<div class="cat-nav-head">
+			<div class="row">
+				<div class="col-lg-12 col-12">
+					<div class="menu-area">
+						<!-- Main Menu -->
+						<nav class="navbar navbar-expand-lg">
+							<div class="navbar-collapse">
+								<div class="nav-inner">
+									<ul class="nav main-menu menu navbar-nav">
+										<li><a href="{% url 'store:index.html'%}">Home</a></li>
+										<li><a href="#">Shop<i class="ti-angle-down"></i><span
+													class="new">New</span></a>
+											<ul class="dropdown">
+												<li><a href="{% url 'store:shop.html' 0 %}">Cửa hàng</a></li>
+												<li><a href="{% url 'cart:cart_detail'%}">Giỏ hàng</a></li>
+												<li><a href="{% url 'store:checkout.html'%}">Thanh toán</a></li>
+											</ul>
+										</li>
+										<li><a href="{% url 'store:contact.html'%}">Liên hệ</a></li>
+										<li class="active"><a href="{% url 'store:rss.html'%}">RSS</a></li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+						<!--/ End Main Menu -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/ End Header Inner -->
+</header>
+<!--/ End Header -->
+
+<!-- Start Contact -->
+<section id="contact-us" class="contact-us section">
+	<div class="container">
+		<div class="contact-head">			
+			<div class="col-12">
+				<div class="section-title">
+					<h2>THANH NIÊN CÔNG NGHỆ - RSS</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-12">
+					<table class="table">
+						{% if feeds %}
+						{% for entry in feeds %}
+						<tr>
+							<td>
+								<h5><a href="{{entry.link}}"> {{entry.title}} </a></h5>
+								<i><a href="{{entry.link}}">{{entry.published}} </a></i>
+								<div> {{entry.description|safe}}</div>
+							</td>					
+						</tr>
+						{% endfor %}
+						{% endif %}
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

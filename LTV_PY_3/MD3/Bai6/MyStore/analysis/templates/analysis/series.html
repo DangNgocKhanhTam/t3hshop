@@ -1,0 +1,25 @@
+<body>
+    <div class="container">
+        <h1>Series</h1>
+        <h3>Tạo Series với index tự động</h3>
+        {{ views1 | safe }}
+
+        <h3>Tạo Series với index do người viết tạo: likes</h3>
+        {{ likes1 | safe }}
+
+        <h3>Series ánh xạ từ Series likes trên:</h3>
+        {{ double_likes | safe }}
+
+        <h3>Đọc dữ liệu từ file vào Series</h3>
+        <h4>Head</h4>
+        {{ headviews2 | safe }}
+
+        <h4>Tail</h4>
+        {{ tailviews2 | safe }}
+
+        <h5>Số phần tử của series trên: {{ len_views2 }}</h5>
+
+        <h3>Hàm thống kê cho dữ liệu likes</h3>
+        {{ stats_html | safe }}
+    </div>
+</body>

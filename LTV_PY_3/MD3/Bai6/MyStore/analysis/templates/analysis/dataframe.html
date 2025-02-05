@@ -1,0 +1,16 @@
+<body>
+    <div class="container">
+        <h1>Dataframe</h1>
+        <h3>Tạo Dataframe từ array/dictionary</h3>
+        {{ df_views_likes_html | safe }}
+
+        <h4>Lấy cột views từ dataframe</h4>
+        {{ get_views | safe }}
+
+        <h4>Thêm cột shared vào dataframe</h4>
+        {{ df_views_likes_now | safe }}
+
+        <h4>Cập nhật index kiểu chuỗi cho dataframe</h4>
+        {{ df_views_likes_stridx | safe }}
+    </div>
+</body>
